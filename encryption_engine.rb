@@ -23,7 +23,7 @@ ROT13 ={'a'=> 'n',
         text[i-1].upcase == text[i-1] ? text[i-1] = ROT13[text[i-1].downcase].upcase : text[i-1] = ROT13[text[i-1].downcase]
         i -= 1
       elsif ('n'..'z').include?(text[i-1].downcase)
-        text[i-1].upcase == text[i-1] ? text[i-1] = ROT13.key(text[i-1].downcase).upcase : ROT13.key(text[i-1].downcase)
+        text[i-1].upcase == text[i-1] ? text[i-1] = ROT13.key(text[i-1].downcase).upcase : text[i-1]=ROT13.key(text[i-1].downcase)
         i -= 1
       else
         i -= 1
@@ -32,4 +32,4 @@ ROT13 ={'a'=> 'n',
     text
   end
 end
-puts EncryptionEngine.new.encrypt('My Messager')
+puts EncryptionEngine.new.encrypt('My Message')
